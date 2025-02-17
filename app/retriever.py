@@ -40,7 +40,7 @@ class RAGRetriever:
     def retreive_docs_from_ids(self,id_to_score,threshold=5):
         resumes_dict = dict(zip(self.df['ids'].astype(str),self.df['resume']))
         ids_list = [str(doc_ids) for doc_ids,scores in sorted(id_to_score.items(),key = lambda x:x[1], reverse = True)][:threshold]
-        print(ids_list)
+        #print(ids_list)
         docs_list = [resumes_dict[ids] for ids in ids_list]
         for i in range(len(docs_list)):
             docs_list[i] = "Applicant ID:" + ids_list[i] + "\n" + docs_list[i]
@@ -59,7 +59,8 @@ class QueryRetriever(RAGRetriever):
             """Retrieve Resumes similar to the given job description"""
             query_list = [job_description]
             if rag_method == 'rag_fusion':
-                query_list.append(llm.generate_subqueries(job_desc))
+                query_list += llm.generate_subqueries(job_description)
+            #print(query_list)
             doc_ids = self.retreive_rerank(query_list)
             resumes = self.retreive_docs_from_ids(doc_ids)
             return resumes
@@ -84,7 +85,7 @@ class QueryRetriever(RAGRetriever):
                            'retreive_resume_id':retreive_resume_id}
                 return toolbox[response.tool].run(response.tool_input)
         
-        llm_func_call = llm.bind(functions = [format_tool_to_openai_function(tool) for tool in [retreive_resume_id,retreive_resume_jd]])
+        llm_func_call = llm.llm.bind(functions = [format_tool_to_openai_function(tool) for tool in [retreive_resume_id,retreive_resume_jd]])
         chain = self.prompt | llm_func_call | OpenAIFunctionsAgentOutputParser() | Router
         result = chain.invoke({'input':question})
         return result
