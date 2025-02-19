@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 from langchain.schema.agent import AgentFinish
 from langchain.tools.render import format_tool_to_openai_function
 from langchain.agents.output_parsers import OpenAIFunctionsAgentOutputParser
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 class JobDescription(BaseModel):
     """Description of job for retreiving resumes"""
     job_description: str = Field(... , description='Description of job to retreive similar resumes from vector database')
@@ -16,6 +17,7 @@ class RAGRetriever:
     def __init__(self,vectordb,df):
         self.df = df
         self.vectordb = vectordb
+        
     def  __reciprocal_rank_fusion__(self,document_ids_list,k=50):
         fused_scores = {}
         for doc_list in document_ids_list:
@@ -53,7 +55,10 @@ class QueryRetriever(RAGRetriever):
             [('system','You are a member of talent acquisition/HR'),
             ("user","{input}")]
         )
-    def retreive_resume(self,question,llm = ChatOpenAI(temperature=0),rag_method = "RAG"):
+        self.meta_data = {
+            "quer_type": 'no_retreive'
+        }
+    def retreive_resume(self,question,llm,rag_method = "GeneralRAG"):
         @tool(args_schema=JobDescription)
         def retreive_resume_jd(job_description:str):
             """Retrieve Resumes similar to the given job description"""
@@ -83,6 +88,7 @@ class QueryRetriever(RAGRetriever):
             else:
                 toolbox = {'retreive_resume_jd':retreive_resume_jd,
                            'retreive_resume_id':retreive_resume_id}
+                self.meta_data['query_type'] = response.tool
                 return toolbox[response.tool].run(response.tool_input)
         
         llm_func_call = llm.llm.bind(functions = [format_tool_to_openai_function(tool) for tool in [retreive_resume_id,retreive_resume_jd]])
