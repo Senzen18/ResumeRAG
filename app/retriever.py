@@ -56,7 +56,7 @@ class QueryRetriever(RAGRetriever):
             ("user","{input}")]
         )
         self.meta_data = {
-            "quer_type": 'no_retreive'
+            "query_type": 'no_retreive'
         }
     def retreive_resume(self,question,llm,rag_method = "GeneralRAG"):
         @tool(args_schema=JobDescription)
