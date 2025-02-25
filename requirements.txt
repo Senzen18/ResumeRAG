@@ -1,0 +1,15 @@
+langchain==0.3.17
+langchain-community==0.3.14
+langchain-core==0.3.35
+langchain-openai==0.3.6
+pydantic==2.10.4
+PyPDF2==3.0.1
+scikit-learn==1.6.0
+openai==1.63.0
+pandas==2.2.3
+faiss-cpu==1.9.0.post1
+streamlit==1.42.0
+sentence-transformers==3.3.1
+huggingface-hub==0.27.1
+streamlit-modal==0.1.2
+numpy==1.26.4
