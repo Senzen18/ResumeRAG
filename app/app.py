@@ -5,8 +5,8 @@ import sys, os
 from langchain_core.messages import AIMessage,HumanMessage
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
-from Chatbot import Chatbot
-from retriever import QueryRetriever
+from .Chatbot import Chatbot
+from .retriever import QueryRetriever
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from streamlit_modal import Modal
 sys.path.append('../')
@@ -35,7 +35,7 @@ Simply enter a job description or candidate IDs to get started..
 st.title('ResumeRAG')
 
 if "df" not in st.session_state:
-    st.session_state.df = pd.read_csv('../dataset/resumes.csv')
+    st.session_state.df = pd.read_csv('./dataset/resumes.csv')
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [AIMessage(content=introduction_message)]
 if "embedder" not in st.session_state:
@@ -44,7 +44,7 @@ if "embedder" not in st.session_state:
     model_kwargs = {'device':'cpu'}
 )
 if "retreiver" not in st.session_state:
-    vectordb = FAISS.load_local(folder_path='../vectordb/',embeddings= st.session_state.embedder,   allow_dangerous_deserialization=True)
+    vectordb = FAISS.load_local(folder_path='./vectordb/',embeddings= st.session_state.embedder,   allow_dangerous_deserialization=True)
     st.session_state.retreiver = QueryRetriever(vectordb,st.session_state['df'])
 
 
