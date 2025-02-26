@@ -37,7 +37,7 @@ RAG Fusion: Advanced fusion-based retrieval for improved relevance.
 ## Installation
 ```bash
 git clone https://github.com/Senzen18/ResumeRAG.git
-cd resume-screening-rag
+cd ResumeRAG
 pip install -r requirements.txt
 ```
 
