@@ -1,9 +1,9 @@
 # ResumeRAG - A Resume-Screening-RAG
-##Overview
+## Overview
 
 Resume Screening RAG is an agentic Retrieval-Augmented Generation (RAG) application designed to assist hiring managers in efficiently screening resumes based on job descriptions. The system retrieves and summarizes the most relevant resumes, allowing users to compare candidates directly or obtain top-ranked candidates for a given job description.
 
-###Features
+### Features
 
 🔍 Semantic Resume Search: Retrieve the most relevant resumes using semantic search.
 
@@ -19,7 +19,7 @@ Standard RAG: Traditional retrieval-augmented generation for fetching resumes.
 
 RAG Fusion: Advanced fusion-based retrieval for improved relevance.
 
-##Technologies Used
+## Technologies Used
 
 LLM Agent: OpenAI API for response generation.
 
@@ -29,20 +29,20 @@ Framework: LangChain for retrieval-augmented generation pipeline.
 
 Deployment: Streamlit for interactive UI.
 
-##Installation
+## Installation
 
 git clone [https://github.com/your-repo/resume-screening-rag.git](https://github.com/Senzen18/ResumeRAG.git)
 cd resume-screening-rag
 pip install -r requirements.txt
 
-##Usage
+## Usage
 
 Run the application:
 
 streamlit run run.py
 
 
-##Future Enhancements
+## Future Enhancements
 
 🔗 Graph-Based Retrieval: Enhance search using knowledge graphs.
 
@@ -50,10 +50,10 @@ streamlit run run.py
 
 📊 Dashboard UI: Expand interactive visualization capabilities.
 
-##Contributing
+## Contributing
 
 Feel free to contribute by submitting pull requests or opening issues.
 
-License
+## License
 
 MIT License
