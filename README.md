@@ -5,15 +5,15 @@ Resume Screening RAG is an agentic Retrieval-Augmented Generation (RAG) applicat
 
 ### Features
 
-🔍 Semantic Resume Search: Retrieve the most relevant resumes using semantic search.
+- 🔍 Semantic Resume Search: Retrieve the most relevant resumes using semantic search.
 
-📑 Summarization: Generate concise summaries of candidates based on job-specific relevance.
+- 📑 Summarization: Generate concise summaries of candidates based on job-specific relevance.
 
-⚙️ Comparison Mode: Provide application IDs to compare selected candidates.
+- ⚙️ Comparison Mode: Provide application IDs to compare selected candidates.
 
-🎯 Ranking Mode: Input a job description to get the top-ranked candidates.
+- 🎯 Ranking Mode: Input a job description to get the top-ranked candidates.
 
-🔄 Configurable Retrieval: Choose between:
+- 🔄 Configurable Retrieval: Choose between:
 
 Standard RAG: Traditional retrieval-augmented generation for fetching resumes.
 
@@ -21,13 +21,13 @@ RAG Fusion: Advanced fusion-based retrieval for improved relevance.
 
 ## Technologies Used
 
-LLM Agent: OpenAI API for response generation.
+- LLM Agent: OpenAI API for response generation.
 
-Vector Database: FAISS for semantic search.
+- Vector Database: FAISS for semantic search.
 
-Framework: LangChain for retrieval-augmented generation pipeline.
+- Framework: LangChain for retrieval-augmented generation pipeline.
 
-Deployment: Streamlit for interactive UI.
+- Deployment: Streamlit for interactive UI.
 
 ## Installation
 
