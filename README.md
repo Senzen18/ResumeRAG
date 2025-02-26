@@ -8,7 +8,6 @@ The link to the streamlit app could be found here [ResumeRAG](https://resumerag.
 ![image](https://github.com/user-attachments/assets/379b5e3c-ad3b-4ccb-801b-699efbe2a8f1)
 
 
-
 ### Features
 
 - 🔍 Semantic Resume Search: Retrieve the most relevant resumes using semantic search.
@@ -36,16 +35,17 @@ RAG Fusion: Advanced fusion-based retrieval for improved relevance.
 - Deployment: Streamlit for interactive UI.
 
 ## Installation
-
+'''bash
 git clone [https://github.com/your-repo/resume-screening-rag.git](https://github.com/Senzen18/ResumeRAG.git)
 cd resume-screening-rag
-pip install -r requirements.txt
+pip install -r requirements.txt '''
 
 ## Usage
 
 Run the application:
-
+'''bash
 streamlit run run.py
+'''
 
 
 ## Future Enhancements
