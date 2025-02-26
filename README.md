@@ -3,6 +3,9 @@
 
 Resume Screening RAG is an agentic Retrieval-Augmented Generation (RAG) application designed to assist hiring managers in efficiently screening resumes based on job descriptions. The system retrieves and summarizes the most relevant resumes, allowing users to compare candidates directly or obtain top-ranked candidates for a given job description.
 
+## Demo
+The link to the streamlit app could be found here [ResumeRAG](https://resumerag.streamlit.app/)
+
 ### Features
 
 - 🔍 Semantic Resume Search: Retrieve the most relevant resumes using semantic search.
