@@ -5,6 +5,9 @@ Resume Screening RAG is an agentic Retrieval-Augmented Generation (RAG) applicat
 
 ## Demo
 The link to the streamlit app could be found here [ResumeRAG](https://resumerag.streamlit.app/)
+![image](https://github.com/user-attachments/assets/379b5e3c-ad3b-4ccb-801b-699efbe2a8f1)
+
+
 
 ### Features
 
