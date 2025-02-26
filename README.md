@@ -35,17 +35,18 @@ RAG Fusion: Advanced fusion-based retrieval for improved relevance.
 - Deployment: Streamlit for interactive UI.
 
 ## Installation
-'''bash
+```bash
 git clone [https://github.com/your-repo/resume-screening-rag.git](https://github.com/Senzen18/ResumeRAG.git)
 cd resume-screening-rag
-pip install -r requirements.txt '''
+pip install -r requirements.txt
+```
 
 ## Usage
 
 Run the application:
-'''bash
-streamlit run run.py
-'''
+```bash
+streamlit run app.py
+```
 
 
 ## Future Enhancements
