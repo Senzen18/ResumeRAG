@@ -8,7 +8,7 @@ The link to the streamlit app could be found here [ResumeRAG](https://resumerag.
 ![image](https://github.com/user-attachments/assets/379b5e3c-ad3b-4ccb-801b-699efbe2a8f1)
 
 
-### Features
+## Features
 
 - 🔍 Semantic Resume Search: Retrieve the most relevant resumes using semantic search.
 
